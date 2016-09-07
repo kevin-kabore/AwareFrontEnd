@@ -19,12 +19,18 @@
         controller: 'MessagesController',
         controllerAs: 'messageCtrl'
       })
-      // .state("pledges", {
-      //   url: "/pledges",
-      //   templateUrl: "/templates/pledges.html",
-      //   controller: "PledgesController",
-      //   controllerAs: "vm"
-      // });
+      .state('signup', {
+        url: '/signup',
+        templateUrl: './js/auth/signup.html',
+        controller: 'SignInController',
+        controllerAs: 'signUpCtrl'
+      })
+      .state('signin', {
+        url: '/signin',
+        templateUrl: './js/auth/signin.html',
+        controller: 'SignInController',
+        controllerAs: 'signUpCtrl'
+      })
 
     $urlRouterProvider.otherwise('/');
   }

@@ -26,7 +26,7 @@
               self.messages = res
               console.log(self.messages);
             })
-        }, 1000)
+        }, 30000)
       }
       refreshMessages()
  }

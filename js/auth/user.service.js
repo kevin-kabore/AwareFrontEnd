@@ -18,7 +18,7 @@
     function create(data) {
       var promise = $http({
         method: 'POST',
-        url:    'http://localhost:3000/api/users',
+        url:    'https://awarebackend.herokuapp.com/api/users',
         data:   data
       });
 

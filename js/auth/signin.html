@@ -1,0 +1,64 @@
+<div class="sign-in-form" ng-hide="signUpCtrl.toggleValue">
+  <h1>Sign In</h1>
+
+  <form ng-submit="signUpCtrl.submitLogIn()" name="signInForm" novalidate>
+    <div class="form-group">
+      <label for="exampleInputNumber1">Number</label>
+      <input ng-model="signUpCtrl.logIn.number" type="text" name="number" required class="form-control" id="exampleInputPassword1" placeholder="Number">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input ng-model="signUpCtrl.logIn.email" type="email" name="email" required class="form-control" id="exampleInputEmail1" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input ng-model="signUpCtrl.logIn.password" type="password" name="password" required class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+
+    <button type="submit" ng-disabled="signInForm.$invalid" class="btn btn-default">Submit</button>
+  </form>
+
+  <p>
+    <strong>
+      If you are not a user yet,
+      <a class="underline" ng-click="signUpCtrl.toggleValue = !signUpCtrl.toggleValue;"><u>Sign Up</u></a>.
+    </strong>
+  </p>
+</div>
+
+<div ng-show="signUpCtrl.toggleValue">
+  <h1>Sign Up</h1>
+
+  <form ng-submit="signUpCtrl.submitSignUp();">
+    <div>
+      <label for="exampleInputEmail1">Email address</label>
+      <input ng-model="signUpCtrl.signUp.email" type="email" ng-class="{'red-border': signUpCtrl.conflict}" class="form-control" id="exampleInputEmail1" placeholder="Email">
+      <small ng-show="signUpCtrl.conflict" class="text-danger"><em>Email exists…</em></small>
+    </div>
+    <div >
+      <label for="exampleInputName">Name</label>
+      <input ng-model="signUpCtrl.signUp.name" type="text" class="form-control" id="exampleInputName" placeholder="Name">
+    </div>
+    <div >
+      <label for="exampleInputPassword1">Password</label>
+      <input ng-model="signUpCtrl.signUp.password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    </div>
+    <div >
+      <label for="exampleInputPassword2">Password confirmation</label>
+      <input ng-model="signUpCtrl.signUp.passwordConfirmation" type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+
+  <p>
+    <strong>
+      If you are already a user,
+      <a class="underline" ng-click="signUpCtrl.toggleValue = !signUpCtrl.toggleValue;"><u>Sign In</u></a>.
+    </strong>
+  </p>
+
+  <p>
+    If you can't remember your password,
+    <a class="underline"><u>request a new one</u>.</a>
+  </p>
+</div> <!-- sign-up-form -->

@@ -4,7 +4,7 @@ angular
 
 MessageFactory.$inject = ['$http'];
 function MessageFactory($http){
-  var messageApi = 'http://localhost:3000/api/sms/'
+  var messageApi = 'https://awarebackend.herokuapp.com/api/sms/'
 
   var messages = {}
 

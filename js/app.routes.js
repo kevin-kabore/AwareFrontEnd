@@ -11,11 +11,11 @@
     $stateProvider
       .state('homePage', {
         url: '/',
-        templateUrl: 'templates/home.html'
+        templateUrl: './templates/home.html'
       })
       .state('messages', {
         url: '/messages',
-        templateUrl: 'templates/messages.html',
+        templateUrl: './templates/messages.html',
         controller: 'MessagesController',
         controllerAs: 'messageCtrl'
       })

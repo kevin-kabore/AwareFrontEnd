@@ -12,4 +12,5 @@ function MessageFactory($http){
     return $http.get(messageApi)
   }
   return messages
+
 }

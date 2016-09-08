@@ -1,7 +1,16 @@
+
 <ul ng-repeat="message in messageCtrl.messages">
   <li>State: {{message.FromState}}</li>
   <li>City: {{message.FromCity }}</li>
   <li>Zip Code: {{message.FromZip}}</li>
   <li>Body: {{message.Body}}</li>
+  <form ng-if="messageCtrl.authService.isAdmin()" ng-submit="messageCtrl.updateMessage(message)">
+    <label for="body"></label>
+    <input type="text" ng-model="message.newBody"></input>
+    <button type="submit">Change Body</button>
+  </form>
+
+  <button ng-if="messageCtrl.authService.isAdmin()"  ng-click="messageCtrl.deleteMessage(message)">Delete</button>
+  <hr>
+
 </ul>
-<!-- {{messageCtrl.messages}} -->

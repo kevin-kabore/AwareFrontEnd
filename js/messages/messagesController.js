@@ -3,19 +3,49 @@
 
   angular
       .module('awareApp')
-      .controller('MessagesController', MessagesController);
+      .controller('MessagesController', MessagesController)
+      .controller('MyMessagesController', MyMessagesController);
 
+  MyMessagesController.$inject = ['$http']
   MessagesController.$inject = ['$state', 'MessageFactory', '$interval', '$http', 'authService'];
+
+  function MyMessagesController($http){
+    var self = this
+
+    self.getMyMessages = getMyMessages
+    self.myMessages = []
+
+    function getMyMessages(user){
+      $http({
+        method: 'GET',
+        url: 'http://localhost:3000/users/me',
+        data: user
+      }).then(function(data){
+          console.log(data.data.data.number)
+          var phone = encodeURIComponent(data.data.data.number)
+
+          $http({
+            method: 'GET',
+            url: 'http://localhost:3000/api/sms/phone/' + phone
+          }).then(function(data){
+            console.log(data);
+            self.myMessages = data.data
+          })
+        })
+    }
+    getMyMessages()
+  }
 
   function MessagesController($state, MessageFactory, $interval, $http, authService) {
     var self = this;
     self.authService = authService
-    
+
     self.api = MessageFactory
     self.messages = []
 
     self.updateMessage = updateMessage
     self.deleteMessage = deleteMessage
+
 
     self.api.list()
       .success(function(res){
@@ -42,13 +72,11 @@
     }
 
     function deleteMessage(message){
-      console.log(message);
       $http({
         method: 'DELETE',
         url: 'http://localhost:3000/api/sms/' + message._id
       })
     }
-
- }
+}
 
 })();

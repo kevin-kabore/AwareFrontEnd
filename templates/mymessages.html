@@ -1,0 +1,12 @@
+
+<div>
+  <ul ng-repeat="message in myMessageCtrl.myMessages">
+    <li>State: {{message.FromState}}</li>
+    <li>City: {{message.FromCity }}</li>
+    <li>Zip Code: {{message.FromZip}}</li>
+    <li>Body: {{message.Body}}</li>
+    <li>Date: {{message.date | date:'medium'}}</li>
+
+    <hr>
+  </ul>
+</div>

@@ -24,6 +24,7 @@
           <a ui-sref="messages" type="button" class="btn btn-default navbar-btn navbar-right">Messages</a>
           <button ng-show="self.authService.isLoggedIn()" ng-click= "self.authService.logOut()" type="button" class="btn btn-default navbar-btn navbar-right">Sign out</button>
           <button ng-hide="self.authService.isLoggedIn()" ui-sref="signin" type="button" class="btn btn-default navbar-btn navbar-right">Sign in</button>
+          <a ui-sref="mymessages">My Messages</a>
         </div>
       </nav>
     </header>

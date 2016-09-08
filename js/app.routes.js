@@ -19,6 +19,12 @@
         controller: 'MessagesController',
         controllerAs: 'messageCtrl'
       })
+      .state('mymessages', {
+        url: '/mymessages',
+        templateUrl: '../templates/mymessages.html',
+        controller: 'MyMessagesController',
+        controllerAs: 'myMessageCtrl'
+      })
       .state('signup', {
         url: '/signup',
         templateUrl: './js/auth/signup.html',

@@ -12,18 +12,18 @@
 
     // BINDINGS
     self.signUp = {
-      number: '+13474972829',
-      email: 'kevin@kevin.com',
-      firstName: 'Kevin',
-      lastName: 'Kabore',
-      password: '12345',
-      passwordConfirmation: '12345'
+      number: '',
+      email: '',
+      firstName: '',
+      lastName: '',
+      password: '',
+      passwordConfirmation: ''
     };
     self.submitSignUp = submitSignUp;
     self.logIn = {
-      number: '+13474972829',
-      email:    'kevin@kevin.com',
-      password: '12345'
+      number: '',
+      email:    '',
+      password: ''
     };
     self.submitLogIn = submitLogIn;
     self.conflict = false;

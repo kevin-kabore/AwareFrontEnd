@@ -18,7 +18,7 @@
     function getMyMessages(user){
       $http({
         method: 'GET',
-        url: 'http://localhost:3000/users/me',
+        url: 'https://awarebackend.herokuapp.com/users/me',
         data: user
       }).then(function(data){
           console.log(data.data.data.number)
@@ -26,7 +26,7 @@
 
           $http({
             method: 'GET',
-            url: 'http://localhost:3000/api/sms/phone/' + phone
+            url: 'https://awarebackend.herokuapp.com/api/sms/phone/' + phone
           }).then(function(data){
             console.log(data);
             self.myMessages = data.data
@@ -66,7 +66,7 @@
       message.Body = message.newBody
       $http({
         method: 'PATCH',
-        url: 'http://localhost:3000/api/sms/' + message._id,
+        url: 'https://awarebackend.herokuapp.com/api/sms/' + message._id,
         data: message
       })
     }
@@ -74,7 +74,7 @@
     function deleteMessage(message){
       $http({
         method: 'DELETE',
-        url: 'http://localhost:3000/api/sms/' + message._id
+        url: 'https://awarebackend.herokuapp.com/api/sms/' + message._id
       })
     }
 }

@@ -1,0 +1,40 @@
+.title {
+  text-align: center;
+  color: rgb(153, 52, 52);
+  font-size: 90px;
+}
+
+.title-under {
+  text-align: center;
+  color: rgb(153, 52, 52);
+  font-size: 34px;
+}
+
+.homeBackground {
+  color: rgb(0, 0, 0);
+}
+
+.textUs {
+  position: absolute;
+  float: right;
+  text-align: center;
+  top: 90px;
+  right: 150px;
+
+}
+
+.text {
+  font-size: 18px;
+  color: rgb(56, 119, 195);
+}
+
+#story {
+  margin: 0 auto;
+  width: 75%;
+  font-size: 6px;
+}
+
+.filter {
+  /*margin: 0 auto;
+  width: 50%;*/
+}

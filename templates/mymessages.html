@@ -1,12 +1,38 @@
+<div class="container">
+<div class="panel panel-default">
 
-<div>
-  <ul ng-repeat="message in myMessageCtrl.myMessages">
-    <li>State: {{message.FromState}}</li>
-    <li>City: {{message.FromCity }}</li>
-    <li>Zip Code: {{message.FromZip}}</li>
-    <li>Body: {{message.Body}}</li>
-    <li>Date: {{message.date | date:'medium'}}</li>
+  <div class="panel-heading"><strong>Your Aware Board </strong>
+    <p>Text <strong>+1 (347) 263-8007</strong> to post a new one</p>
+  </div>
 
-    <hr>
-  </ul>
+    <table class="table">
+      <thead class="thead-inverse">
+        <th >State</th>
+        <th>City</th>
+        <th>Zip</th>
+        <th>Body</th>
+        <th>Date</th>
+      </thead>
+      <tbody ng-repeat="message in myMessageCtrl.myMessages | orderBy:messageOrder | filter:filterSearch">
+        <td>{{message.FromState}}</td>
+        <td>{{message.FromCity}}</td>
+        <td>{{message.FromZip}}</td>
+        <td>
+          {{message.Body}}
+
+          <form ng-if="messageCtrl.authService.isAdmin()" ng-submit="messageCtrl.updateMessage(message)">
+            <label for="body"></label>
+            <input type="text" ng-model="message.newBody"></input>
+            <button type="submit">Change Body</button>
+          </form>
+
+        </td>
+
+        <td>{{message.date | date:'medium'}}</td>
+        <td>
+          <button ng-if="messageCtrl.authService.isAdmin()"  ng-click="messageCtrl.deleteMessage(message)">Delete</button>
+        </td>
+      </tbody>
+    </table>
+  </div>
 </div>

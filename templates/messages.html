@@ -1,22 +1,49 @@
-<div>
-  <ul ng-repeat="message in messageCtrl.messages">
-    <li>State: {{message.FromState}}</li>
-    <li>City: {{message.FromCity }}</li>
-    <li>Zip Code: {{message.FromZip}}</li>
-    <li>Body: {{message.Body}}</li>
-    <li>Date: {{message.date | date:'medium'}}</li>
+<div class="container">
 
-    <form ng-if="messageCtrl.authService.isAdmin()" ng-submit="messageCtrl.updateMessage(message)">
-      <label for="body"></label>
-      <input type="text" ng-model="message.newBody"></input>
-      <button type="submit">Change Body</button>
-    </form>
+  <div class="filter">Filter Search: <input type="text" ng-model="filterSearch">
+  </div>
 
-    <button ng-if="messageCtrl.authService.isAdmin()"  ng-click="messageCtrl.deleteMessage(message)">Delete</button>
-    <hr>
-  </ul>
+  <div class="filter">
+    Sort By:
+    <select ng-model="messageOrder">
+      <option value="FromState">State</option>
+      <option value="FromCity">City</option>
+      <option value="FromZip">Zip Code</option>
+      <option value="date">Date</option>
+    </select>
+  </div>
 
-  <table>
-    
-  </table>
+  <div class="panel panel-default">
+    <div class="panel-heading"><strong>Aware Board </strong>
+      <p>Text <strong>+1 (347) 263-8007</strong> to post your own</p>
+    </div>
+
+    <table class="table table-inverse container">
+      <thead class="thead-inverse">
+        <th >State</th>
+        <th>City</th>
+        <th>Zip</th>
+        <th>Body</th>
+        <th>Date</th>
+      </thead>
+      <tbody ng-repeat="message in messageCtrl.messages | orderBy:messageOrder | filter:filterSearch">
+        <td>{{message.FromState}}</td>
+        <td>{{message.FromCity}}</td>
+        <td>{{message.FromZip}}</td>
+        <td>
+          {{message.Body}}
+
+          <form ng-if="messageCtrl.authService.isAdmin()" ng-submit="messageCtrl.updateMessage(message)">
+            <label for="body"></label>
+            <input type="text" ng-model="message.newBody"></input>
+            <button type="submit" class="btn btn-warning">Change Body</button>
+          </form>
+        </td>
+        <td>{{message.date | date:'medium'}}</td>
+        <td>
+          <button class="btn btn-danger"ng-if="messageCtrl.authService.isAdmin()"  ng-click="messageCtrl.deleteMessage(message)">Delete</button>
+        </td>
+      </tbody>
+    </table>
+  </div>
 </div>

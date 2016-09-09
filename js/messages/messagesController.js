@@ -58,7 +58,7 @@
           .success(function(res){
             self.messages = res
           })
-      }, 5000)
+      }, 3000)
     }
     refreshMessages()
 

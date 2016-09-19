@@ -12,7 +12,9 @@
 
 .homeBackground {
   color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-image: url("../images/BurkinaFasoBlurry.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .textUs {
@@ -33,20 +35,9 @@
   margin: 0 auto;
   width: 75%;
   font-size: 6px;
-  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .filter {
   /*margin: 0 auto;
   width: 50%;*/
-}
-
-body {
-  background-image: url("../images/BurkinaFasoBlurry.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-table{
-  background-color: rgba(0, 0, 0, 0.5);
 }

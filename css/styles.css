@@ -12,6 +12,7 @@
 
 .homeBackground {
   color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .textUs {
@@ -32,6 +33,7 @@
   margin: 0 auto;
   width: 75%;
   font-size: 6px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .filter {

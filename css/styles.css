@@ -39,7 +39,7 @@
   width: 50%;*/
 }
 
-html {
+body {
   background-image: url("../images/BurkinaFasoBlurry.jpg");
   background-repeat: no-repeat;
   background-size: cover;

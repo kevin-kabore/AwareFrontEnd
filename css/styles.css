@@ -38,3 +38,9 @@
   /*margin: 0 auto;
   width: 50%;*/
 }
+
+body {
+  background-image: url("../images/BurkinaFasoBlurry.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}

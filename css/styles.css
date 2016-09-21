@@ -49,3 +49,7 @@
 table {
   background: transparent;
 }
+
+.story-text {
+  color: red;
+}

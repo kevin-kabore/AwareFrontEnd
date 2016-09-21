@@ -14,23 +14,23 @@
   </div>
 
   <div style="background:rgba(0, 0, 0, 0.5);" class="panel panel-default">
-    <div style="background:rgba(0, 0, 0, 0.5);" class="panel-heading"><strong style="color:rgb(255, 255, 255);">Aware Board </strong>
-      <p style="color:rgb(255, 255, 255);">Text <strong>+1 (347) 263-8007</strong> to post your own</p>
+    <div style="background:rgba(0, 0, 0, 0.5);" class="panel-heading"><strong style="color:rgb(56, 119, 195);">Aware Board </strong>
+      <p style="color:rgb(56, 119, 195);">Text <strong>+1 (347) 263-8007</strong> to post your own</p>
     </div>
 
     <table style="background:rgba(0, 0, 0, 0.5);" class="table table-inverse container">
       <thead class="thead-inverse">
-        <th style="color:rgb(255, 255, 255);">State</th>
-        <th style="color:rgb(255, 255, 255);">City</th>
-        <th style="color:rgb(255, 255, 255);">Zip</th>
-        <th style="color:rgb(255, 255, 255);">Body</th>
-        <th style="color:rgb(255, 255, 255);">Date</th>
+        <th style="color:rgb(56, 119, 195);">State</th>
+        <th style="color:rgb(56, 119, 195);">City</th>
+        <th style="color:rgb(56, 119, 195);">Zip</th>
+        <th style="color:rgb(56, 119, 195);">Body</th>
+        <th style="color:rgb(56, 119, 195);">Date</th>
       </thead>
       <tbody ng-repeat="message in messageCtrl.messages | orderBy:messageOrder | filter:filterSearch">
-        <td style="color:rgb(255, 255, 255);">{{message.FromState}}</td>
-        <td style="color:rgb(255, 255, 255);">{{message.FromCity}}</td>
-        <td style="color:rgb(255, 255, 255);">{{message.FromZip}}</td>
-        <td style="color:rgb(255, 255, 255);">
+        <td style="color:rgb(56, 119, 195);">{{message.FromState}}</td>
+        <td style="color:rgb(56, 119, 195);">{{message.FromCity}}</td>
+        <td style="color:rgb(56, 119, 195);">{{message.FromZip}}</td>
+        <td style="color:rgb(56, 119, 195);">
           {{message.Body}}
 
           <form ng-if="messageCtrl.authService.isAdmin()" ng-submit="messageCtrl.updateMessage(message)">
@@ -39,7 +39,7 @@
             <button type="submit" class="btn btn-warning">Change Body</button>
           </form>
         </td>
-        <td style="color:rgb(255, 255, 255);">{{message.date | date:'medium'}}</td>
+        <td style="color:rgb(56, 119, 195);">{{message.date | date:'medium'}}</td>
         <td>
           <button class="btn btn-danger"ng-if="messageCtrl.authService.isAdmin()"  ng-click="messageCtrl.deleteMessage(message)">Delete</button>
         </td>

@@ -31,7 +31,7 @@
         <td style="color:rgb(56, 119, 195);">{{message.FromCity}}</td>
         <td style="color:rgb(56, 119, 195);">{{message.FromZip}}</td>
         <td style="color:rgb(56, 119, 195);">
-          {{message.Body}}
+          <strong>{{message.Body}}</strong>
 
           <form ng-if="messageCtrl.authService.isAdmin()" ng-submit="messageCtrl.updateMessage(message)">
             <label for="body"></label>

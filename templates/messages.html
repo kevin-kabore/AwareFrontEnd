@@ -1,4 +1,4 @@
-<div style="background:rgba(0, 0, 0, 0.8);" class="container">
+<div class="container">
 
   <div class="filter">Filter Search: <input type="text" ng-model="filterSearch">
   </div>
@@ -20,17 +20,17 @@
 
     <table style="background:rgba(0, 0, 0, 0.5);" class="table table-inverse container">
       <thead class="thead-inverse">
-        <th >State</th>
-        <th>City</th>
-        <th>Zip</th>
-        <th>Body</th>
-        <th>Date</th>
+        <th style="color: rgb(153, 52, 52);">State</th>
+        <th style="color: rgb(153, 52, 52);">City</th>
+        <th style="color: rgb(153, 52, 52);">Zip</th>
+        <th style="color: rgb(153, 52, 52);">Body</th>
+        <th style="color: rgb(153, 52, 52);">Date</th>
       </thead>
       <tbody ng-repeat="message in messageCtrl.messages | orderBy:messageOrder | filter:filterSearch">
-        <td>{{message.FromState}}</td>
-        <td>{{message.FromCity}}</td>
-        <td>{{message.FromZip}}</td>
-        <td>
+        <td style="color: rgb(153, 52, 52);">{{message.FromState}}</td>
+        <td style="color: rgb(153, 52, 52);">{{message.FromCity}}</td>
+        <td style="color: rgb(153, 52, 52);">{{message.FromZip}}</td>
+        <td style="color: rgb(153, 52, 52);">
           {{message.Body}}
 
           <form ng-if="messageCtrl.authService.isAdmin()" ng-submit="messageCtrl.updateMessage(message)">

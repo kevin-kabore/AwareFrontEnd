@@ -39,7 +39,7 @@
             <button type="submit" class="btn btn-warning">Change Body</button>
           </form>
         </td>
-        <td>{{message.date | date:'medium'}}</td>
+        <td style="color:rgb(153, 52, 52);">{{message.date | date:'medium'}}</td>
         <td>
           <button class="btn btn-danger"ng-if="messageCtrl.authService.isAdmin()"  ng-click="messageCtrl.deleteMessage(message)">Delete</button>
         </td>
